@@ -1,0 +1,84 @@
+
+@mixin breakpoint($point) {
+    @if $point == xl {
+      @media (min-width: 1904px) { @content ; }
+    }
+    @else if $point == lg {
+      @media (min-width: 1264px) { @content ; }
+    }
+    @else if $point == md {
+      @media (min-width: 960px) { @content ; }
+    }
+    @else if $point == sm {
+      @media (min-width: 600px)  { @content ; }
+    }
+    @else if $point == xs {
+      @media (max-width: 599px)  { @content ; }
+    }
+  }
+  
+  // KEYFRAMES
+  @keyframes pulsate {
+    0% {
+      transform: scale(1);
+      opacity:0.8;
+    }
+    45% {
+      transform: scale(1.75);
+      opacity:0;
+    }
+  }
+  
+  // PAGE TRANSITIONS
+  @mixin pageSlideInLeft() {
+    .page-enter-active {
+      animation: slideIn 0.5s ease-out both;
+    }
+    @keyframes slideIn {
+      0% {
+        transform: translate3d(100%, 0, 0);
+      }
+      100% {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+  }
+  @mixin pageSlideInRight() {
+    .page-enter-active {
+      animation: slideIn 0.5s ease-out both;
+    }
+    @keyframes slideIn {
+      0% {
+        transform: translate3d(-100%, 0, 0);
+      }
+      100% {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+  }
+  @mixin pageSlideOutRight() {
+    .page-leave-active {
+      animation: slideOut 0.5s ease-in both;
+    }
+    @keyframes slideOut {
+      0% {
+        transform: translate3d(0, 0, 0);
+      }
+      100% {
+        transform: translate3d(100%, 0, 0);
+      }
+    }
+  }
+  @mixin pageSlideOutLeft() {
+    .page-leave-active {
+      animation: slideOut 0.5s ease-in both;
+    }
+    @keyframes slideOut {
+      0% {
+        transform: translate3d(0, 0, 0);
+      }
+      100% {
+        transform: translate3d(-100%, 0, 0);
+      }
+    }
+  }

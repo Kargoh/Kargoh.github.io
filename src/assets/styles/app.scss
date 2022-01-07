@@ -1,0 +1,9 @@
+@import '~bootstrap/scss/bootstrap';
+
+@import 'variables.scss';
+@import 'mixins.scss';
+@import 'fonts.scss';
+
+#app {
+    position: relative;
+}
