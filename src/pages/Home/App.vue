@@ -11,7 +11,7 @@
       <div class="col-md-6">
         <h1>Learn More About us</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur quaerat voluptate iusto? Nihil voluptas vitae veritatis magnam reprehenderit, reiciendis ex? Libero quasi natus veniam voluptatum, voluptas exercitationem ratione consectetur et!</p>
-        <button class="btn custom-btn btn-outline-primary mr-4">Browse Products</button>
+        <a class="btn custom-btn btn-outline-primary mr-4" href="/about">Learn more</a>
       </div>
     </div>
     <login></login>
@@ -21,8 +21,8 @@
 
 <script>
 import Navbar from '../../components/Navbar.vue'
-import login from '../../components/Login.vue'
-import products from '../../components/products.vue'
+import login from '../../components/login.vue'
+import products from '../../components/products-list.vue'
 import hero from '../../components/hero.vue'
 
 export default {

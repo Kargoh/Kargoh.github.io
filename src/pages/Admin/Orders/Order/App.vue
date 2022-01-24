@@ -1,26 +1,26 @@
 <template>
   <Navbar />
-  <div class="products-page container">
+  <div class="order-page container">
     <div class="row">
-      <div class="col-12"> 
-        <h1>Products Page</h1>
+      <div class="col-12">
+        <h1>Order Page</h1>
+      </div>
+      <div class="col-12">
+        <h2>Order</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur quaerat voluptate iusto? Nihil voluptas vitae veritatis magnam reprehenderit, reiciendis ex? Libero quasi natus veniam voluptatum, voluptas exercitationem ratione consectetur et!</p>
+        <a class="btn custom-btn btn-outline-primary mr-4" href="/admin/orders">Back to Orders</a>
       </div>
     </div>
   </div>
-  <ProductsList />
-  <ProductsList />
-  <ProductsList />
 </template>
 
 <script>
 import Navbar from '/src/components/admin-nav.vue'
-import ProductsList from '/src/components/admin-products-list.vue'
 
 export default {
-  name: 'Products',
+  name: 'Product',
   components: {
-    Navbar,
-    ProductsList
+    Navbar
   }
 }
 </script>

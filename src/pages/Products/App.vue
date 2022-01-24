@@ -1,8 +1,9 @@
 <template>
   <Navbar />
-  <div class="products-page container">
+  <div class="products container">
     <div class="row">
       <div class="col-12"> 
+        <img class="cd-logo" alt="Vue logo" src="../../assets/images/logo-cooldown-gaming.svg">
         <h1>Products Page</h1>
       </div>
     </div>
@@ -13,8 +14,8 @@
 </template>
 
 <script>
-import Navbar from '/src/components/admin-nav.vue'
-import ProductsList from '/src/components/admin-products-list.vue'
+import Navbar from '../../components/Navbar.vue'
+import ProductsList from '../../components/products-list.vue'
 
 export default {
   name: 'Products',
@@ -26,9 +27,9 @@ export default {
 </script>
 
 <style lang="scss">
-@import '/src/assets/styles/variables.scss';
-@import '/src/assets/styles/mixins.scss';
-@import '/src/assets/styles/fonts.scss';
+@import '../../assets/styles/variables.scss';
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/fonts.scss';
 
 .products {
 

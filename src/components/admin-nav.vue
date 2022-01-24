@@ -43,16 +43,24 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style scoped lang="scss">
 nav {
+  background: rgba(44,62,80,.5) !important;
   padding: 1rem 3rem;
-}
-#navbarSupportedContent {
-  justify-content: space-between;
-}
+  position: absolute !important;
+  width: 100%;
 
-form {
-  display: flex;
-  column-gap: 1rem;
+  #navbarSupportedContent {
+    justify-content: space-between;
+  }
+
+  form {
+    display: flex;
+    column-gap: 1rem;
+ 
+    button {
+      background-color: #fff !important;
+    }
+  }
 }
 </style>

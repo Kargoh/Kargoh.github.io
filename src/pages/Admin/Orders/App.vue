@@ -1,22 +1,24 @@
 <template>
   <adminNavbar />
-  <div class="orders container">
+  <div class="order-page container">
     <div class="row">
       <div class="col-12"> 
-        <img class="cd-logo" alt="Vue logo" src="../../../assets/images/logo-cooldown-gaming.svg">
-        <h1>Orders Page</h1>
+        <h1>Order Page</h1>
       </div>
     </div>
   </div>
+  <orderList />
 </template>
 
 <script>
 import adminNavbar from '../../../components/admin-nav.vue'
+import orderList from '/src/components/admin-orders-list.vue'
 
 export default {
   name: 'orders',
   components: {
-    adminNavbar
+    adminNavbar,
+    orderList
   }
 }
 </script>
