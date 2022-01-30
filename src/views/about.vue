@@ -18,27 +18,30 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur quaerat voluptate iusto? Nihil voluptas vitae veritatis magnam reprehenderit, reiciendis ex? Libero quasi natus veniam voluptatum, voluptas exercitationem ratione consectetur et!</p>
       </div>
       <div class="col-md-6">
-        <img class="our-leader" alt="cooldown gaming" src="../../assets/images/isaiah-cropped.jpg">
+        <img class="our-leader" alt="cooldown gaming" src="/src/assets/images/isaiah-cropped.jpg">
       </div>
     </div>
   </div>
+  <Footer />
 </template>
 
 <script>
-import Navbar from '../../components/Navbar.vue'
+import Navbar from '/src/components/Navbar.vue'
+import Footer from '/src/components/Footer.vue'
 
 export default {
   name: 'about',
   components: {
-    Navbar
+    Navbar,
+    Footer
   }
 }
 </script>
 
 <style lang="scss">
-@import '../../assets/styles/variables.scss';
-@import '../../assets/styles/mixins.scss';
-@import '../../assets/styles/fonts.scss';
+@import '/src/assets/styles/variables.scss';
+@import '/src/assets/styles/mixins.scss';
+@import '/src/assets/styles/fonts.scss';
 
 .about {
   .our-leader {

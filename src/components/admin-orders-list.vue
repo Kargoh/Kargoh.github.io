@@ -67,7 +67,7 @@ export default {
       }
 
       .btn {
-        color: #fff;
+        color: $white;
         display: inline-block;
         margin: 24px;
         width: 10%;

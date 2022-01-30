@@ -44,6 +44,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+@import '/src/assets/styles/variables.scss';
+@import '/src/assets/styles/mixins.scss';
+@import '/src/assets/styles/fonts.scss';
 nav {
   background: rgba(44,62,80,.5) !important;
   padding: 1rem 3rem;
@@ -59,7 +62,7 @@ nav {
     column-gap: 1rem;
  
     button {
-      background-color: #fff !important;
+      background-color: $white !important;
     }
   }
 }

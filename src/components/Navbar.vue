@@ -9,7 +9,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/home">Home</a>
+            <a class="nav-link" href="/">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/about">About</a>
@@ -18,10 +18,7 @@
             <a class="nav-link" href="/products">Products</a>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <a class="btn btn-outline-success my-2 my-sm-0" data-bs-toggle="modal" data-bs-target="#login">Login</a>
-        </form>
+          <a href="/login" class="btn btn-outline-success my-2 my-sm-0" >Login</a>
       </div>
     </nav>
 
@@ -39,9 +36,12 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
+<style lang="scss">
+@import '/src/assets/styles/variables.scss';
+@import '/src/assets/styles/mixins.scss';
+@import '/src/assets/styles/fonts.scss';
 nav {
-  background: rgba(44,62,80,.5) !important;
+  background: $white;
   padding: 1rem 3rem;
   position: absolute !important;
   width: 100%;
@@ -50,12 +50,16 @@ nav {
     justify-content: space-between;
   }
 
+  a {
+    color: $blue
+  }
+
   form {
     display: flex;
     column-gap: 1rem;
 
     button {
-      background-color: #fff !important;
+      background-color: $white !important;
     }
   }
 }

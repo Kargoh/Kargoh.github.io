@@ -6,7 +6,7 @@
     <products />
     <div class="row justify-content-center align-items-center">
       <div class="col-md-6">
-        <img class="cd-logo" alt="cooldown gaming" src="../../assets/images/logo-cooldown-gaming.svg">
+        <img class="cd-logo" alt="cooldown gaming" src="/src/assets/images/logo-cooldown-gaming.svg">
       </div>
       <div class="col-md-6">
         <h1>Learn More About us</h1>
@@ -14,22 +14,19 @@
         <a class="btn custom-btn btn-outline-primary mr-4" href="/about">Learn more</a>
       </div>
     </div>
-    <login></login>
     <mini-cart></mini-cart>
   </div>
 </template>
 
 <script>
-import Navbar from '../../components/Navbar.vue'
-import login from '../../components/login.vue'
-import products from '../../components/products-list.vue'
-import hero from '../../components/hero.vue'
+import Navbar from '/src/components/Navbar.vue'
+import products from '/src/components/products-list.vue'
+import hero from '/src/components/hero.vue'
 
 export default {
   name: 'Home',
   components: {
     Navbar,
-    login,
     products,
     hero
   }

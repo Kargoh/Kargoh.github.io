@@ -3,20 +3,23 @@
   <div class="admin container">
     <div class="row">
       <div class="col-12"> 
-        <img class="cd-logo" alt="Vue logo" src="../../assets/images/logo-cooldown-gaming.svg">
+        <img class="cd-logo" alt="Vue logo" src="/src/assets/images/logo-cooldown-gaming.svg">
         <h1>Admin Page</h1>
       </div>
     </div>
   </div>
+  <Footer />
 </template>
 
 <script>
-import adminNavbar from '../../components/admin-nav.vue'
+import adminNavbar from '/src/components/admin-nav.vue'
+import Footer from '/src/components/Footer.vue'
 
 export default {
   name: 'admin',
   components: {
-    adminNavbar
+    adminNavbar,
+    Footer
   }
 }
 </script>

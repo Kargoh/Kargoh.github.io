@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import adminNavbar from '../../../components/admin-nav.vue'
+import adminNavbar from '/src/components/admin-nav.vue'
 import orderList from '/src/components/admin-orders-list.vue'
 
 export default {
