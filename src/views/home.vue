@@ -16,19 +16,22 @@
     </div>
     <mini-cart></mini-cart>
   </div>
+  <Footer />
 </template>
 
 <script>
 import Navbar from '/src/components/Navbar.vue'
 import products from '/src/components/products-list.vue'
 import hero from '/src/components/hero.vue'
+import Footer from '/src/components/Footer.vue'
 
 export default {
   name: 'Home',
   components: {
     Navbar,
     products,
-    hero
+    hero,
+    Footer
   }
 }
 </script>

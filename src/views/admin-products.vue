@@ -4,25 +4,21 @@
     <div class="row">
       <div class="col-12"> 
         <h1>Products Page</h1>
+        <ProductCreate />
+        <ProductsList />
       </div>
     </div>
   </div>
-  <ProductsList />
-  <ProductsList />
-  <ProductsList />
+  
+  
 </template>
 
-<script>
+<script setup>
 import Navbar from '/src/components/admin-nav.vue'
 import ProductsList from '/src/components/admin-products-list.vue'
+import ProductCreate from '/src/components/product-create.vue'
 
-export default {
-  name: 'Products',
-  components: {
-    Navbar,
-    ProductsList
-  }
-}
+
 </script>
 
 <style lang="scss">

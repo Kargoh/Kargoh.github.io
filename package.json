@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.1.3",
-    "core-js": "^3.6.5",
+    "core-js": "^3.20.3",
     "firebase": "^8.10.0",
     "jquery": "^3.6.0",
     "travis": "^0.1.1",

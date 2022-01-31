@@ -9,7 +9,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/home">Home</a>
+            <a class="nav-link" href="/">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/admin/products">Products</a>
@@ -18,7 +18,7 @@
             <a class="nav-link" href="/admin/orders">Orders</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/logout">Logout</a>
+            <a class="nav-link" href="#" @click="logOut">Logout</a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
@@ -31,15 +31,23 @@
 
 
 
-<script>
+<script setup>
+import firebase from 'firebase'
+import { useRouter } from 'vue-router'
 
-
-export default {
-  name: 'Admin Navbar',
-  props: {
-    msg: String
-  }
-}
+const router = useRouter() // get a reference to our vue router
+const logOut =() => {
+      firebase
+      .auth()
+      .signOut()
+      .then(() => {
+        console.log('Successfully logged out!');
+        router.push('/') // redirect to home
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+    }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

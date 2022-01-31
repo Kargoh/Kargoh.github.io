@@ -1,41 +1,33 @@
 <template>
-  <div class="products">
-    <div class="container">
-        <div class="row">
-            <div class="col-4 product"> 
-                <a href="/products/product">
-                  <h2>Product 1</h2>
-                  <img class="cd-logo" alt="Vue logo" src="../assets/images/gaming-chair.jpg">
-                </a>
-                <a class="btn btn-primary">Edit</a>
-                <a class="btn btn-primary">Delete</a>
-            </div>
-            <div class="col-4 product"> 
-                <a href="/products/product">
-                  <h2>Product 2</h2>
-                  <img class="cd-logo" alt="Vue logo" src="../assets/images/gaming-chair.jpg">
-                </a>
-                <a class="btn btn-primary">Edit</a>
-                <a class="btn btn-primary">Delete</a>
-            </div>
-            <div class="col-4 product"> 
-                <a href="/products/product">
-                  <h2>Product 3</h2>
-                  <img class="cd-logo" alt="Vue logo" src="../assets/images/gaming-chair.jpg">
-                </a>
-                <a class="btn btn-primary">Edit</a>
-                <a class="btn btn-primary">Delete</a>
-            </div>
-        </div>
-    </div>
+  <div class="products card mt-4">
+    <table class="table m-0">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Price</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="{id, name, price } in products" :key="id">
+          <td>{{name}}</td>
+          <td>{{price}}</td>
+          <td>
+            <router-link :to="`/admin/products/${id}`">
+              <button class="btn btn-primary btn-sm me-2">Edit</button>
+            </router-link>
+            <button class="btn btn-danger btn-sm" @click="deleteProduct(id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 </div>
 </template>
 
-<script>
+<script setup>
+import { useLoadProducts, deleteProduct } from '/src/main.js'
+const products = useLoadProducts()
 
-export default {
-  name: 'products'
-}
 </script>
 
 <style lang="scss">
@@ -50,24 +42,5 @@ export default {
   text-align: center;
   color: #2c3e50;
 
-  .products {
-    
-    .product {
-      display: block;
-
-      a {
-        color: #272727;
-        text-decoration: none;
-      }
-
-      .btn {
-        color: $white;
-        display: inline-block;
-        margin: 24px;
-        max-width: 33%;
-        width: 33%;
-      }
-    }
-  }
 }
 </style>
