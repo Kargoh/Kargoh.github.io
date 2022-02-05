@@ -11,6 +11,23 @@
                 <input v-model="form.price" class="form-control" required />
             </div>
 
+            <div class="form-group">
+                <label for="product_image">Product Images</label>
+                <input type="file" @change="uploadImage" class="form-control">
+                <input v-model="form.image" class="form-control" type="hidden" />
+            </div>
+
+            <div class="form-group d-flex">
+                <div class="p-1">
+                    <img :src="image" alt="" width="80px">
+                </div>
+            </div>
+
+            <div class="form-group mt-3">
+                <label>Description</label>
+                <textarea v-model="form.description" class="form-control" placeholder="Enter description here..."></textarea>
+            </div>
+
             <button type="submit" class="btn btn-success mt-3">Create Product</button>
         </form>
     </div>
@@ -19,12 +36,38 @@
 <script setup>
 import { createProduct } from '/src/main.js'
 import { reactive } from 'vue'
+import firebase from 'firebase'
 
-const form = reactive({ name: '', price: '' })
+const firestore = async () => {
+    return {
+        products: firebase.database.collection('products')
+    }
+}
+
+const form = reactive({ name: '', price: '', image: '', description: '' })
+
 const onSubmit = async () => {
+    
     await createProduct({ ...form })
     form.name = ''
     form.price = ''
+    form.image = ''
+    form.description = ''
 }
 
+const uploadImage = async (e) => {
+    let file = e.target.files[0]
+    let storageRef = firebase.storage().ref('products/' + file.name)
+    let uploadTask = storageRef.put(file)
+
+    uploadTask.on('state_changed', (snapshot) => {
+        
+    }, (error) => {
+
+    }, () => {
+        uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
+           form.image = downloadURL
+        })
+    })
+}
 </script>

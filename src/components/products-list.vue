@@ -2,34 +2,23 @@
   <div class="products">
     <div class="container">
         <div class="row">
-            <div class="col-4"> 
-                <a href="/products/product">
-                  <h2>Product 1</h2>
-                  <img class="cd-logo" alt="Vue logo" src="../assets/images/gaming-chair.jpg">
-                </a>
-            </div>
-            <div class="col-4"> 
-                <a href="/products/product">
-                  <h2>Product 2</h2>
-                  <img class="cd-logo" alt="Vue logo" src="../assets/images/gaming-chair.jpg">
-                </a>
-            </div>
-            <div class="col-4"> 
-                <a href="/products/product">
-                  <h2>Product 3</h2>
-                  <img class="cd-logo" alt="Vue logo" src="../assets/images/gaming-chair.jpg">
-                </a>
-            </div>
+          <div v-for="{id, name, price, image } in products" :key="id" class="col-4">
+            <a :href="'products/' + id">
+              <img class="product-image" :src=image />
+              <h3>{{name}}</h3>
+              <span class="price">${{price}}</span>
+              <!-- <p>{{description}}</p> -->
+            </a>
+          </div>
         </div>
     </div>
 </div>
 </template>
 
-<script>
+<script setup>
+import { useLoadProducts } from '/src/main.js'
+const products = useLoadProducts()
 
-export default {
-  name: 'products'
-}
 </script>
 
 <style lang="scss">
@@ -46,8 +35,18 @@ export default {
 
   .products {
     a {
+      width: 100%;
       color: #272727;
       text-decoration: none;
+      
+      h3 {
+        text-transform: uppercase;
+      }
+
+      .product-image {
+        max-height: 240px;
+        width: auto;
+      }
     }
   }
 }

@@ -3,13 +3,15 @@
     <table class="table m-0">
       <thead>
         <tr>
+          <th scope="col">Image</th>
           <th scope="col">Name</th>
           <th scope="col">Price</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="{id, name, price } in products" :key="id">
+        <tr v-for="{id, name, price, image } in products" :key="id">
+          <td><img :src=image /></td>
           <td>{{name}}</td>
           <td>{{price}}</td>
           <td>
@@ -41,6 +43,18 @@ const products = useLoadProducts()
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+
+  tbody {
+
+    td {
+      vertical-align: middle;
+
+      img {
+        width: 80px;
+      }
+    }
+    
+  }
 
 }
 </style>

@@ -2,6 +2,7 @@ import { createApp, onUnmounted, ref } from "vue";
 import App from "./App.vue";
 import router from "./router";
 import firebase from "firebase";
+import "firebase/storage"
 import 'bootstrap';
 window.$ = window.jQuery = require('jquery');
 import '/src/assets/styles/app.scss'

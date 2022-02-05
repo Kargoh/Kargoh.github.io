@@ -9,8 +9,6 @@
     </div>
   </div>
   <ProductsList />
-  <ProductsList />
-  <ProductsList />
 </template>
 
 <script>
