@@ -8,7 +8,7 @@
                 <p>Smurf AoE third-person kill screen real time stats headshot animation cancel SnD easter eggs. Mass Effect aggro Pokemon Nintendo Switch respawn BioShock speedrun Grand Theft Auto: Vice City invisible wall screen cheat AI Guitar Hero resolution. Advergame adventure game Call of Duty: Modern Warfare 2 controller animatic Survival Horror co-op lagging. A spawn GameCube NPC sprite God Mode Donkey Kong quicksave Rayman grinding.</p>
             </div>
             <div class="col-md-6 col-sm-3 img">
-                <img alt="Vue logo" src="/src/assets/images/red-chair.png">
+                <img alt="Vue logo" src="../assets/images/red-chair.png">
             </div>
         </div>
     </div>
@@ -18,7 +18,8 @@
 <script>
 
 export default {
-  name: 'products'
+  name: 'hero',
+  components: {}
 }
 </script>
 
@@ -29,7 +30,7 @@ export default {
 
 .hero {
   align-items: center;
-  background: url('/src/assets/images/hero-background.jpg');
+  background: url('../assets/images/hero-background.jpg');
   background-size: cover;
   color: #2c3e50;
   display: flex;
@@ -51,7 +52,6 @@ export default {
   }
 
   .img {
-    position: relative;
 
     img{
       height: 60vh;
@@ -69,9 +69,6 @@ export default {
       }
     }
 
-    .img {
-      display: none;
-    }
     
   }
 

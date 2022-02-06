@@ -3,8 +3,11 @@
   <div class="admin container">
     <div class="row">
       <div class="col-12"> 
-        <img class="cd-logo" alt="Vue logo" src="/src/assets/images/logo-cooldown-gaming.svg">
-        <h1>Admin Page</h1>
+        <img class="cd-logo" alt="Vue logo" src="../assets/images/logo-cooldown-gaming.svg">
+      </div>
+      <div class="product-list col-12">
+        <h2>Products</h2>
+        <ProductList />
       </div>
     </div>
   </div>
@@ -14,6 +17,7 @@
 <script setup>
 import adminNavbar from '/src/components/admin-nav.vue'
 import Footer from '/src/components/Footer.vue'
+import ProductList from '/src/components/admin-products-list.vue'
 import firebase from 'firebase'
   import { useRouter } from 'vue-router'
   import { onBeforeUnmount } from 'vue'
@@ -30,17 +34,20 @@ import firebase from 'firebase'
   })
 </script>
 
-<style>
-.admin .cd-logo {
-  height: 256px;
-  width: auto;
-}
-
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+<style lang="scss">
+.admin {
+  min-height: 90vh;
+  padding-top: 5rem !important;
   text-align: center;
-  color: #2c3e50;
+
+  .cd-logo {
+    height: auto;
+    max-width: 400px;
+    width: 100%;
+  }
+
+  .product-list {
+    text-align: left;
+  }
 }
 </style>

@@ -1,4 +1,4 @@
-import { createApp, onUnmounted, ref } from "vue";
+import { createApp, onUnmounted, ref, data } from "vue";
 import App from "./App.vue";
 import router from "./router";
 import firebase from "firebase";

@@ -1,18 +1,17 @@
 <template>
   <div class="products">
-    <div class="container">
-        <div class="row">
-          <div v-for="{id, name, price, image, description } in products" :key="id" class="col-4">
-            <a :href="'products/' + id">
-              <img class="product-image" :src=image />
-              <h3>{{name}}</h3>
-              <span class="price">${{price}}</span>
-              <p>{{description}}</p>
-            </a>
-          </div>
-        </div>
+    <div class="row">
+      <div v-for="{id, name, price, image, description } in products" :key="id" class="product col-4">
+        <a :href="'products/' + id">
+          <img class="product-image" :src=image />
+          <h3>{{name}}</h3>
+          <span class="price">${{price}}</span>
+          <p>{{description}}</p>
+          <a class="btn custom-btn btn-outline-primary mr-4">View Product</a>
+        </a>
+      </div>
     </div>
-</div>
+  </div>
 </template>
 
 <script setup>
@@ -34,18 +33,31 @@ const products = useLoadProducts()
   color: #2c3e50;
 
   .products {
-    a {
-      width: 100%;
-      color: #272727;
-      text-decoration: none;
-      
-      h3 {
-        text-transform: uppercase;
-      }
 
-      .product-image {
-        max-height: 240px;
-        width: auto;
+    .product {
+      padding: 2rem 0;
+
+      a {
+        width: 100%;
+        color: #272727;
+        text-decoration: none;
+        
+        h3 {
+          text-transform: uppercase;
+        }
+
+        .product-image {
+          max-height: 240px;
+          width: auto;
+        }
+
+        .custom-btn {
+          width: auto;
+
+          &:hover {
+            color: #fff;
+          }
+        }
       }
     }
   }

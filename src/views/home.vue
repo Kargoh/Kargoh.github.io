@@ -4,16 +4,7 @@
   <div class="home container">
     
     <products />
-    <div class="row justify-content-center align-items-center">
-      <div class="col-md-6">
-        <img class="cd-logo" alt="cooldown gaming" src="/src/assets/images/logo-cooldown-gaming.svg">
-      </div>
-      <div class="col-md-6">
-        <h1>Learn More About us</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur quaerat voluptate iusto? Nihil voluptas vitae veritatis magnam reprehenderit, reiciendis ex? Libero quasi natus veniam voluptatum, voluptas exercitationem ratione consectetur et!</p>
-        <a class="btn custom-btn btn-outline-primary mr-4" href="/about">Learn more</a>
-      </div>
-    </div>
+    <About />
     <mini-cart></mini-cart>
   </div>
   <Footer />
@@ -24,6 +15,7 @@ import Navbar from '/src/components/Navbar.vue'
 import products from '/src/components/products-list.vue'
 import hero from '/src/components/hero.vue'
 import Footer from '/src/components/Footer.vue'
+import About from '/src/components/about-section.vue'
 
 export default {
   name: 'Home',
@@ -31,7 +23,8 @@ export default {
     Navbar,
     products,
     hero,
-    Footer
+    Footer,
+    About
   }
 }
 </script>

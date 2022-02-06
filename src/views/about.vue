@@ -3,7 +3,7 @@
   <div class="about container">
     <div class="row">
       <div class="col-12"> 
-        <h1>About Page</h1>
+        <h1>About Cooldown Gaming</h1>
       </div>
     </div>
     <div class="row justify-content-center align-items-center">
@@ -18,7 +18,7 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur quaerat voluptate iusto? Nihil voluptas vitae veritatis magnam reprehenderit, reiciendis ex? Libero quasi natus veniam voluptatum, voluptas exercitationem ratione consectetur et!</p>
       </div>
       <div class="col-md-6">
-        <img class="our-leader" alt="cooldown gaming" src="/src/assets/images/isaiah-cropped.jpg">
+        <img class="our-leader" alt="cooldown gaming" src="../assets/images/isaiah-cropped.jpg">
       </div>
     </div>
   </div>
@@ -44,9 +44,16 @@ export default {
 @import '/src/assets/styles/fonts.scss';
 
 .about {
-  .our-leader {
-    max-width: 400px;
+  min-height: 80vh;
+
+  .row {
+    padding: 1.5rem 0;
+
+    .our-leader {
+      max-width: 400px;
+    }
   }
+  
 }
 
 

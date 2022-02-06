@@ -3,23 +3,25 @@
   <div class="products container">
     <div class="row">
       <div class="col-12"> 
-        <img class="cd-logo" alt="Vue logo" src="/src/assets/images/logo-cooldown-gaming.svg">
         <h1>Products Page</h1>
       </div>
     </div>
+    <ProductsList />
   </div>
-  <ProductsList />
+  <Footer />
 </template>
 
 <script>
 import Navbar from '/src/components/Navbar.vue'
 import ProductsList from '/src/components/products-list.vue'
+import Footer from '/src/components/Footer.vue'
 
 export default {
   name: 'Products',
   components: {
     Navbar,
-    ProductsList
+    ProductsList,
+    Footer
   }
 }
 </script>
@@ -30,7 +32,7 @@ export default {
 @import '/src/assets/styles/fonts.scss';
 
 .products {
-
+  min-height: 80vh;
   .cd-logo {
     height: 256px;
     width: auto;
