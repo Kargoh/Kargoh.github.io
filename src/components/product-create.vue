@@ -12,14 +12,14 @@
             </div>
 
             <div class="form-group">
-                <label for="product_image">Product Images</label>
+                <label for="product_image">Image</label>
                 <input type="file" @change="uploadImage" class="form-control">
                 <input v-model="form.image" class="form-control" type="hidden" />
             </div>
 
             <div class="form-group d-flex">
                 <div class="p-1">
-                    <img :src="image" alt="" width="80px">
+                    <img :src="form.image" alt="" width="80" >
                 </div>
             </div>
 
@@ -28,7 +28,7 @@
                 <textarea v-model="form.description" class="form-control" placeholder="Enter description here..."></textarea>
             </div>
 
-            <button type="submit" class="btn btn-success mt-3">Create Product</button>
+            <button :disabled="!form.image" type="submit" class="btn btn-success mt-3">Create Product</button>
         </form>
     </div>
 </template>
@@ -47,13 +47,14 @@ const firestore = async () => {
 const form = reactive({ name: '', price: '', image: '', description: '' })
 
 const onSubmit = async () => {
-    
     await createProduct({ ...form })
     form.name = ''
     form.price = ''
     form.image = ''
     form.description = ''
+    
 }
+
 
 const uploadImage = async (e) => {
     let file = e.target.files[0]

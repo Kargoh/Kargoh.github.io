@@ -6,14 +6,16 @@
           <th scope="col">Image</th>
           <th scope="col">Name</th>
           <th scope="col">Price</th>
+          <th scope="col">Description</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="{id, name, price, image } in products" :key="id">
+        <tr v-for="{id, name, price, image, description } in products" :key="id">
           <td><img :src=image /></td>
           <td>{{name}}</td>
           <td>{{price}}</td>
+          <td>{{description}}</td>
           <td>
             <router-link :to="`/admin/products/${id}`">
               <button class="btn btn-primary btn-sm me-2">Edit</button>

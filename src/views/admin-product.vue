@@ -3,7 +3,6 @@
   <div class="product-page container">
     <div class="row">
       <div class="col-12"> 
-        <h1>Product</h1>
         <UpdateProduct />
       </div>
     </div>

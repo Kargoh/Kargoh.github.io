@@ -2,12 +2,12 @@
   <div class="products">
     <div class="container">
         <div class="row">
-          <div v-for="{id, name, price, image } in products" :key="id" class="col-4">
+          <div v-for="{id, name, price, image, description } in products" :key="id" class="col-4">
             <a :href="'products/' + id">
               <img class="product-image" :src=image />
               <h3>{{name}}</h3>
               <span class="price">${{price}}</span>
-              <!-- <p>{{description}}</p> -->
+              <p>{{description}}</p>
             </a>
           </div>
         </div>
