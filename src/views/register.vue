@@ -35,11 +35,9 @@ import Footer from '/src/components/Footer.vue'
       .auth() // get the auth api
       .createUserWithEmailAndPassword(email.value, password.value) // need .value because ref()
       .then((data) => {
-        console.log('Successfully registered!');
         router.push('/feed') // redirect to the feed
       })
       .catch(error => {
-        console.log(error.code)
         alert(error.message);
       });
   }

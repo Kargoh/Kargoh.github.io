@@ -30,8 +30,6 @@ firebase.auth().onAuthStateChanged((user) => {
     profileInfo.image = user.photoURL
     profileInfo.emailVerified = user.emailVerified
     profileInfo.uid = user.uid
-
-    console.log(profileInfo.name + " | " + profileInfo.email + " | " + profileInfo.image + " | " + profileInfo.emailVerified + " | " + profileInfo.uid)
     // ...
   } else {
     // User is signed out

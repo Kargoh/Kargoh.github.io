@@ -20,8 +20,6 @@ export default new Vuex.Store({
             }
 
             this.commit('saveData')
-
-            console.log(state.cart)
         },
 
         saveData(state) {

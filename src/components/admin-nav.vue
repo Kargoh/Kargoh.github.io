@@ -44,11 +44,9 @@ const logOut =() => {
       .auth()
       .signOut()
       .then(() => {
-        console.log('Successfully logged out!');
         router.push('/') // redirect to home
       })
       .catch((err) => {
-        console.log(err);
       })
     }
 </script>

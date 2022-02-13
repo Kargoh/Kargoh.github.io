@@ -4,12 +4,13 @@
     "indexes": "firestore.indexes.json"
   },
   "hosting": {
-    "public": "public",
+    "public": "dist",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
     ],
+    "redirects": [],
     "rewrites": [
       {
         "source": "**",
@@ -19,5 +20,10 @@
   },
   "storage": {
     "rules": "storage.rules"
-  }
+  },
+  "functions": {
+    "source": "functions"
+  },
+
+  "appAssociation": "AUTO"
 }

@@ -3,6 +3,7 @@ import firebase from 'firebase'
 
 const router = createRouter({
   history: createWebHistory(),
+  base: process.env.BASE_URL,
   routes: [
     {
       path: "/",

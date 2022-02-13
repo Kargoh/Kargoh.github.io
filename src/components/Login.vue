@@ -57,11 +57,9 @@ import { useRouter } from 'vue-router'
       .auth() // get the auth api
       .createUserWithEmailAndPassword(email.value, password.value) // need .value because ref()
       .then((data) => {
-        console.log('Successfully registered!');
         router.push('/products') // redirect to products
       })
       .catch(error => {
-        console.log(error.code)
         alert(error.message);
       });
   }

@@ -35,11 +35,9 @@ import Footer from '/src/components/Footer.vue'
       .auth()
       .signInWithEmailAndPassword(email.value, password.value) // THIS LINE CHANGED
       .then((data) => {
-        console.log('Successfully logged in!');
         router.push('/admin') // redirect to the admin
       })
       .catch(error => {
-        console.log(error.code)
         alert(error.message);
       });
   }
