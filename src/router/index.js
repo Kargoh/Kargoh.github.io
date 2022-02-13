@@ -33,6 +33,14 @@ const router = createRouter({
       component: () => import("/src/views/orders.vue"),
     },
     {
+      path: "/orders/:id",
+      component: () => import("/src/views/order.vue"),
+    },
+    {
+      path: "/checkout",
+      component: () => import("/src/views/checkout.vue"),
+    },
+    {
       path: "/admin",
       component: () => import("/src/views/admin.vue"),
     },
@@ -47,6 +55,10 @@ const router = createRouter({
     {
       path: "/admin/products/:id",
       component: () => import("/src/views/admin-product.vue"),
+    },
+    {
+      path: "/admin/profile",
+      component: () => import("/src/views/admin-profile.vue"),
     },
   ],
 });

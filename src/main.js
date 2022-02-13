@@ -1,10 +1,12 @@
-import { createApp, onUnmounted, ref, data } from "vue";
+import { createApp, onUnmounted, ref, data, VueElement } from "vue";
+
 import App from "./App.vue";
 import router from "./router";
 import firebase from "firebase";
 import "firebase/storage"
 import 'bootstrap';
 window.$ = window.jQuery = require('jquery');
+import $ from 'jquery'
 import '/src/assets/styles/app.scss'
 
 /* code from our Firebase console */
@@ -21,8 +23,10 @@ var firebaseConfig = {
 // Initialize Firebase
 const fb = firebase.initializeApp(firebaseConfig);
 
-// Product CRUD operations
+// Initialize Database
 const db = fb.firestore()
+
+// Product CRUD operations
 const productsCollection = db.collection('products')
 
 export const createProduct = product => {
@@ -51,11 +55,46 @@ export const useLoadProducts = () => {
   return products
 }
 
+// Orders CRUD Operations
+const ordersCollection = db.collection('orders')
+
+export const createOrder = order => {
+  return ordersCollection.add(order)
+}
+
+export const getOrder = async id => {
+  const order = await ordersCollection.doc(id).get()
+  return order.exists ? order.data() : null
+}
+
+export const updateOrder = (id, order) => {
+  return ordersCollection.doc(id).update(order)
+}
+
+export const deleteOrders = id => {
+  return ordersCollection.doc(id).delete()
+}
+
+export const useLoadOrders = () => {
+  const orders = ref([])
+  const close = ordersCollection.onSnapshot(snapshot => {
+    orders.value = snapshot.docs.map(doc => ({id: doc.id, ...doc.data() }))
+  })
+  onUnmounted(close)
+  return orders
+}
+
+// Import Store
+import store from './store.js'
+
 // create app
 const app = createApp(App);
 
 // use routers
 app.use(router);
+
+// use store
+app.use(store);
 
 // mount app
 app.mount("#app");

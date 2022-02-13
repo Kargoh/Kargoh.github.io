@@ -16,18 +16,25 @@
           <a class="nav-link" href="/products">Products</a>
         </li>
       </ul>
+      <div class="right-nav">
         <a href="/login" class="btn btn-outline-success my-2 my-sm-0" >Login</a>
+        <a class="btn btn-outline-success my-2 my-sm-0" data-bs-toggle="modal" data-bs-target="#shoppingCart">View Cart</a>
+      </div>
     </div>
   </nav>
+  <ShoppingCart />
 </template>
 
 
 
 <script>
+import ShoppingCart from './cart.vue'
 
 export default {
   name: 'Navbar',
-  components: {}
+  components: {
+      ShoppingCart
+  },
 }
 </script>
 
@@ -48,6 +55,14 @@ nav {
 
   a {
     color: $blue
+  }
+
+  .right-nav{
+    a {
+      &:first-of-type {
+        margin-right: 6px;
+      }
+    }
   }
 
   form {

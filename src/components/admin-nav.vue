@@ -18,6 +18,9 @@
             <a class="nav-link" href="/admin/orders">Orders</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="/admin/profile">Profile</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="#" @click="logOut">Logout</a>
           </li>
         </ul>

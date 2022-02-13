@@ -1,24 +1,22 @@
 <template>
   <div class="products">
     <div class="row">
-      <div v-for="{id, name, price, image, description } in products" :key="id" class="product col-4">
+      <div v-for="{id, name, price, image, description } in orders" :key="id" class="product col-4">
         <a :href="'products/' + id">
           <img class="product-image" :src=image />
           <h3>{{name}}</h3>
           <span class="price">${{price}}</span>
           <p>{{description}}</p>
+          <a class="btn custom-btn btn-outline-primary mr-4">View Order</a>
         </a>
-        <AddToCart :image="image" :p-id="id" :price="price" :name="name"/>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { useLoadProducts } from '/src/main.js'
-import AddToCart from './add-to-cart.vue'
-const products = useLoadProducts()
-
+import { useLoadOrders } from '/src/main.js'
+const products = useLoadOrders()
 
 </script>
 
